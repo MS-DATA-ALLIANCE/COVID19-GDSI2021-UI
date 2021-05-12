@@ -1,4 +1,4 @@
-# COVID19-GDSI2021
+# COVID19-GDSI2021-UI
 MSDA Toolkit  For Federated Registries participating in the COVID19 in MS Global Data Sharing  initiative (GDSI)
 
 
