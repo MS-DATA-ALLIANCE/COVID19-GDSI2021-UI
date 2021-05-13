@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ashka\\OneDrive\\Documents\\Projects\\Covid19-GDSI\\Federated\\Federated\\Federated.csproj": {}
+    "C:\\Users\\ashka\\OneDrive\\Documents\\Projects\\Covid19-GDSI-UI\\Federated\\Federated\\Federated.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ashka\\OneDrive\\Documents\\Projects\\Covid19-GDSI\\Federated\\Federated\\Federated.csproj": {
+    "C:\\Users\\ashka\\OneDrive\\Documents\\Projects\\Covid19-GDSI-UI\\Federated\\Federated\\Federated.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ashka\\OneDrive\\Documents\\Projects\\Covid19-GDSI\\Federated\\Federated\\Federated.csproj",
+        "projectUniqueName": "C:\\Users\\ashka\\OneDrive\\Documents\\Projects\\Covid19-GDSI-UI\\Federated\\Federated\\Federated.csproj",
         "projectName": "Federated",
-        "projectPath": "C:\\Users\\ashka\\OneDrive\\Documents\\Projects\\Covid19-GDSI\\Federated\\Federated\\Federated.csproj",
+        "projectPath": "C:\\Users\\ashka\\OneDrive\\Documents\\Projects\\Covid19-GDSI-UI\\Federated\\Federated\\Federated.csproj",
         "packagesPath": "C:\\Users\\ashka\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ashka\\OneDrive\\Documents\\Projects\\Covid19-GDSI\\Federated\\Federated\\obj\\",
+        "outputPath": "C:\\Users\\ashka\\OneDrive\\Documents\\Projects\\Covid19-GDSI-UI\\Federated\\Federated\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ashka\\AppData\\Roaming\\NuGet\\NuGet.Config",

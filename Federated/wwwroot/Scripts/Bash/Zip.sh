@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cd /app/wwwroot/Scripts/Python/MSDA_Querry3
-/usr/bin/zip -r result_$(date +'%F_%R').zip results >> /var/log/cron.log 2>&1 &
+/usr/bin/zip -r result_$(date +'%F_%R').zip results
 
 sleep 6
  
