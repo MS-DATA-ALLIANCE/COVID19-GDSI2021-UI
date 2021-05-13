@@ -9,13 +9,22 @@ set -e
 set -o pipefail
 
 # ensure we only use apk repositories over HTTPS (altough APK contain an embedded signature)
-
+echo "https://alpine.global.ssl.fastly.net/alpine/v$(cut -d . -f 1,2 < /etc/alpine-release)/main" > /etc/apk/repositories \
+  && echo "https://alpine.global.ssl.fastly.net/alpine/v$(cut -d . -f 1,2 < /etc/alpine-release)/community" >> /etc/apk/repositories
 
 # Update base system
-apt-get update
-apt-get upgrade
-apt-get --no-cache ca-certificates
+apk update
+apk add --no-cache ca-certificates
 
+# Upgrade packages
+apk upgrade -U
+apk add bash
+apk add nano
+
+apk add --no-cache python3 py3-pip
+
+echo "@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
+apk add --update --no-cache py3-numpy py3-pandas@testing
 # Add custom user and setup home directory
 adduser -s /bin/true -u 1000 -D -h $APP_DIR $APP_USER \
   && chown -R "$APP_USER" "$APP_DIR" \
@@ -42,16 +51,16 @@ sed -i -r "/^($APP_USER|root|nobody)/!d" /etc/group \
   && sed -i -r "/^($APP_USER|root|nobody)/!d" /etc/passwd
 
 # Remove interactive login shell for everybody
-sed -i -r 's#^(.*):[^:]*$#\1:/sbin/nologin#' /etc/passwd
+#sed -i -r 's#^(.*):[^:]*$#\1:/sbin/nologin#' /etc/passwd
 
 # Disable password login for everybody
 while IFS=: read -r username _; do passwd -l "$username"; done < /etc/passwd || true
 
 # Remove apk configs
-find /bin /etc /lib /sbin /usr \
- -xdev -type f -regex '.*apk.*' \
- ! -name apk \
- -exec rm -fr {} +
+#find /bin /etc /lib /sbin /usr \
+# -xdev -type f -regex '.*apk.*' \
+# ! -name apk \
+# -exec rm -fr {} +
 
 # Remove temp shadow,passwd,group
 find /bin /etc /lib /sbin /usr -xdev -type f -regex '.*-$' -exec rm -f {} +
@@ -66,14 +75,13 @@ find /bin /etc /lib /sbin /usr -xdev -type f -a \( -perm +4000 -o -perm +2000 \)
 
 # Remove dangerous commands
 find /bin /etc /lib /sbin /usr -xdev \( \
-  -name hexdump -o \
-  -name chgrp -o \
-  -name chown -o \
-  -name ln -o \
-  -name od -o \
-  -name strings -o \
-  -name su \
-  -name sudo \
+  -iname hexdump -o \
+  -iname chgrp -o \
+  -iname ln -o \
+  -iname od -o \
+  -iname strings -o \
+  -iname su -o \
+  -iname sudo \
   \) -delete
 
 # Remove init scripts since we do not use them.
@@ -90,3 +98,8 @@ rm -f /etc/fstab
 
 # Remove any symlinks that we broke during previous steps
 find /bin /etc /lib /sbin /usr -xdev -type l -exec test ! -e {} \; -delete
+
+
+
+
+

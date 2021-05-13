@@ -24,7 +24,7 @@ RUN dotnet publish \
 # Make the self contained ASP.NET Core executable
 # This is done in the stage 1 to reduce final image size,
 # as chmod in stage 2 will copy the file to another layer.
-# As per below blog, COPY command now supports the —-chown as you'll see in stage 2.
+# As per below blog, COPY command now supports the â€”-chown as you'll see in stage 2.
 # https://medium.com/@lmakarov/the-backlash-of-chmod-chown-mv-in-your-dockerfile-f12fe08c0b55
 RUN chmod u+x,o+x ./output/Federated
 
@@ -41,7 +41,9 @@ ENV APP_DIR="/$APP_USER"
 WORKDIR $APP_DIR
 
 # Harden docker image
+RUN apk add dos2unix
 COPY --from=build-env /build/harden.sh .
+RUN dos2unix harden.sh
 RUN chmod +x harden.sh && \
   sh harden.sh && \
   rm harden.sh

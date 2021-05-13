@@ -1,26 +1,8 @@
 #!/usr/bin/env sh
 
-# fail if a command fails
-set -e
-set -o pipefail
+cd ~/wwwroot/Scripts/Bash
 
-# remove apk package manager
-find / -type f -iname '*apk*' -xdev -delete
-find / -type d -iname '*apk*' -print0 -xdev | xargs -0 rm -r --
-
-# set rx to all directories
-find "$APP_DIR" -type d -exec chmod 500 {} +
-
-if [ -z "$1" ]
-then
-  # set r to all files
-  find "$APP_DIR" -type f -exec chmod 400 {} +
-else
-  # set r to all files excluding executable binary
-  find "$APP_DIR" ! -name $1 -type f -exec chmod 400 {} +
-fi
-
-# Finally remove chmod
-find /bin /etc /lib /sbin /usr -xdev \( \
-  -name chmod \
-  \) -delete
+dos2unix RunC.sh
+dos2unix RunP.sh
+dos2unix Zip.sh
+dos2unix Clean.sh

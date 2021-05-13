@@ -20,10 +20,10 @@ apk add --no-cache ca-certificates
 apk upgrade -U
 apk add bash
 apk add nano
+apk add zip
 
-apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
-python3 -m ensurepip
-pip3 install --no-cache --upgrade pip setuptools
+apk add --no-cache python3 py3-pip
+
 echo "@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
 apk add --update --no-cache py3-numpy py3-pandas@testing
 # Add custom user and setup home directory
@@ -52,16 +52,16 @@ sed -i -r "/^($APP_USER|root|nobody)/!d" /etc/group \
   && sed -i -r "/^($APP_USER|root|nobody)/!d" /etc/passwd
 
 # Remove interactive login shell for everybody
-sed -i -r 's#^(.*):[^:]*$#\1:/sbin/nologin#' /etc/passwd
+#sed -i -r 's#^(.*):[^:]*$#\1:/sbin/nologin#' /etc/passwd
 
 # Disable password login for everybody
 while IFS=: read -r username _; do passwd -l "$username"; done < /etc/passwd || true
 
 # Remove apk configs
-find /bin /etc /lib /sbin /usr \
- -xdev -type f -regex '.*apk.*' \
- ! -name apk \
- -exec rm -fr {} +
+#find /bin /etc /lib /sbin /usr \
+# -xdev -type f -regex '.*apk.*' \
+# ! -name apk \
+# -exec rm -fr {} +
 
 # Remove temp shadow,passwd,group
 find /bin /etc /lib /sbin /usr -xdev -type f -regex '.*-$' -exec rm -f {} +
@@ -99,3 +99,8 @@ rm -f /etc/fstab
 
 # Remove any symlinks that we broke during previous steps
 find /bin /etc /lib /sbin /usr -xdev -type l -exec test ! -e {} \; -delete
+
+
+
+
+
