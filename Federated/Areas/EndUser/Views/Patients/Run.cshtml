@@ -256,8 +256,8 @@
                                 </span>
 
                                 <span class="card-title font-weight-bolder text-white font-size-h2 mb-0 mt-6 text-hover-primary d-block">@Model.patients_Edss_In_Cat2s.FirstOrDefault().one</span>
-                                <span class="font-weight-bold text-white font-size-sm">One</span>
-                                <span class="font-weight-bold text-white font-size-sm">EDSS</span>
+                                <span class="font-weight-bold text-white font-size-sm">3< EDSS<=6</span>
+                                <span class="font-weight-bold text-white font-size-sm"></span>
                             </div>
                             <!--end::Body-->
                         </div>
@@ -282,8 +282,8 @@
                                 </span>
 
                                 <span class="card-title font-weight-bolder text-white font-size-h2 mb-0 mt-6 text-hover-primary d-block">@Model.patients_Edss_In_Cat2s.FirstOrDefault().two</span>
-                                <span class="font-weight-bold text-white font-size-sm">two</span>
-                                <span class="font-weight-bold text-white font-size-sm">EDSS</span>
+                                <span class="font-weight-bold text-white font-size-sm">6< EDSS</span>
+                                <span class="font-weight-bold text-white font-size-sm"></span>
                             </div>
                             <!--end::Body-->
                         </div>
@@ -312,8 +312,8 @@
                                 </span>
 
                                 <span class="card-title font-weight-bolder text-white font-size-h2 mb-0 mt-6 text-hover-primary d-block">@Model.patients_Edss_In_Cat2s.FirstOrDefault().zero</span>
-                                <span class="font-weight-bold text-white font-size-sm">Zero</span>
-                                <span class="font-weight-bold text-white font-size-sm">EDSS</span>
+                                <span class="font-weight-bold text-white font-size-sm">0<= EDSS<=3</span>
+                                <span class="font-weight-bold text-white font-size-sm"></span>
                             </div>
                             <!--end::Body-->
                         </div>
@@ -334,7 +334,7 @@
                                     </svg><!--end::Svg Icon-->
                                 </span>
                                 <span class="card-title font-weight-bolder text-white font-size-h2 mb-0 mt-6 text-hover-primary d-block">@Model.patients_Age_in_Cats.FirstOrDefault().one</span>
-                                <span class="font-weight-bold text-white font-size-sm">Age-Cat-one</span>
+                                <span class="font-weight-bold text-white font-size-sm">18<= Age <=50</span>
                             </div>
                             <!--end::Body-->
                         </div>
@@ -351,7 +351,7 @@
                                     </svg><!--end::Svg Icon-->
                                 </span>
                                 <span class="card-title font-weight-bolder text-white font-size-h2 mb-0 mt-6 text-hover-primary d-block">@Model.patients_Age_in_Cats.FirstOrDefault().two</span>
-                                <span class="font-weight-bold text-white font-size-sm">Age-Cat-two</span>
+                                <span class="font-weight-bold text-white font-size-sm">50< Age<=70</span>
                             </div>
                             <!--end::Body-->
                         </div>
@@ -368,7 +368,7 @@
                                     </svg><!--end::Svg Icon-->
                                 </span>
                                 <span class="card-title font-weight-bolder text-white font-size-h2 mb-0 mt-6 text-hover-primary d-block">@Model.patients_Age_in_Cats.FirstOrDefault().three</span>
-                                <span class="font-weight-bold text-white font-size-sm">Age-Cat-Three</span>
+                                <span class="font-weight-bold text-white font-size-sm">70< Age</span>
                             </div>
                             <!--end::Body-->
                         </div>
@@ -1041,14 +1041,14 @@
 
                 // Add data
                 chart.data = [{
-                    "country": "Group Zero",
+                    "country": "0<= EDSS <=3",
                     "litres": @Model.patients_Edss_In_Cat2s.FirstOrDefault().zero
                 }, {
-                    "country": "Group One",
+                    "country": "3< EDSS <=6",
                     "litres":  @Model.patients_Edss_In_Cat2s.FirstOrDefault().one
 
                 }, {
-                    "country": "Missing",
+                    "country": "6< EDSS",
                     "litres":  @Model.patients_Edss_In_Cat2s.FirstOrDefault().missing
 
                 }];
