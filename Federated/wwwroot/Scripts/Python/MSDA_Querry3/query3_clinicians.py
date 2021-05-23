@@ -6,7 +6,7 @@ import sys
 sys.path.insert(1, '../')
 
 from data_quality.scripts.utils_cleaning import clean_data
-from data_quality.scripts.utils import enhance_data
+from data_quality.scripts.utils import enhance_data, clean_dates
 
 df = pd.read_csv("./Data/msda_data_clinicians.csv")
 
@@ -22,6 +22,8 @@ df = clean_data(df,None,None)
 #Augment
 print("Creating new variables ....")
 
+df = clean_dates(df)
+
 df["report_source"]="clinicians"
 df = enhance_data(df)
 df["secret_name"] = np.arange(df.shape[0])
@@ -31,7 +33,7 @@ querries.compute_tables(df, report_source = "clinicians")
 print("Done !")
 
 os.makedirs("./Outputs", exist_ok=True)
-file_name = "clinicians_bmi_in_cat2"
+file_name = "clinicians_query3_bmi_in_cat2"
 outcome_types = ["covid19_admission_hospital","covid19_icu_stay","covid19_ventilation","covid19_outcome_death","covid19_outcome_ventilation_or_ICU", "covid19_outcome_levels_1", "covid19_outcome_levels_2"]
 for outcome_type in outcome_types:
     df = pd.read_csv(f"./results/{file_name}_{outcome_type}.csv")
