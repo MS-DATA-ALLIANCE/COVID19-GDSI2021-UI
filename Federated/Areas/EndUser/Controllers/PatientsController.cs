@@ -23,14 +23,14 @@ namespace Federated.Areas.EndUser.Controllers
         }
         public IActionResult Run()
         {
-            string filePathExecute = "wwwroot/Scripts/Bash/RunP.sh";
-            FileInfo fileInfo = new FileInfo(filePathExecute);
-            ProcessStartInfo startInfo = new ProcessStartInfo();
-            startInfo.CreateNoWindow = false;
-            startInfo.UseShellExecute = true;
-            startInfo.FileName = "/bin/bash";
-            startInfo.Arguments = $"\"{fileInfo.FullName}\"";
-            Process process = Process.Start(startInfo);
+            //string filePathExecute = "wwwroot/Scripts/Bash/RunP.sh";
+            //FileInfo fileInfo = new FileInfo(filePathExecute);
+            //ProcessStartInfo startInfo = new ProcessStartInfo();
+            //startInfo.CreateNoWindow = false;
+            //startInfo.UseShellExecute = true;
+            //startInfo.FileName = "/bin/bash";
+            //startInfo.Arguments = $"\"{fileInfo.FullName}\"";
+            //Process process = Process.Start(startInfo);
             string DoneP = @"/app/wwwroot/Scripts/Python/MSDA_Querry3/DoneP.txt";
             var CheckDoneP = (System.IO.File.Exists(DoneP));
             if (CheckDoneP == false)

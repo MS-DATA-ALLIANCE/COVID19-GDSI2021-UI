@@ -110,7 +110,7 @@
                                         </span>
                                     </div>
                                     <div class="d-flex flex-column">
-                                        <a href="#" class="text-dark text-hover-primary font-weight-bold font-size-h4 mb-3">PRMS</a>
+                                        <a href="#" class="text-dark text-hover-primary font-weight-bold font-size-h4 mb-3">PPMS</a>
                                         <a href="#" class="text-dark text-hover-primary font-size-sm  mb-3 ">Type of MS</a>
                                         <div class="text-dark-75 font-size-h3 font-weight-bold"> @Model.patients_Ms_Type2s.FirstOrDefault().progressive_MS</div>
                                     </div>
@@ -597,7 +597,7 @@
                         <div class="card card-custom gutter-b card-stretch" style=" background-color: #663259">
                             <!--begin::Header-->
                             <div class="card-header border-0 py-5">
-                                <h3 class="card-title font-weight-bolder text-white">Covid19 Outcome level2</h3>
+                                <h3 class="card-title font-weight-bolder text-white">Covid19 Outcome level 1</h3>
                                 <div class="card-toolbar">
                                     <div class="dropdown dropdown-inline">
                                         <a href="#" class="btn btn-text-white btn-hover-white btn-sm btn-icon border-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -623,7 +623,7 @@
                                             <div class="font-size-h4 font-weight-bolder">@Model.patients_Covid19_Outcome_Levels_1s.FirstOrDefault().two</div>
                                         </div>
                                         <div class="col px-8 py-4">
-                                            <div class="font-size-sm text-muted font-weight-bold">two</div>
+                                            <div class="font-size-sm text-muted font-weight-bold">three</div>
                                             <div class="font-size-h4 font-weight-bolder">@Model.patients_Covid19_Outcome_Levels_1s.FirstOrDefault().three</div>
                                         </div>
                                         <div class="col px-8 py-4">
@@ -670,11 +670,11 @@
                                             <div class="font-size-h4 font-weight-bolder">@Model.patients_Covid19_Outcome_Levels_2s.FirstOrDefault().two</div>
                                         </div>
                                         <div class="col px-8 py-4">
-                                            <div class="font-size-sm text-muted font-weight-bold">Three</div>
+                                            <div class="font-size-sm text-muted font-weight-bold">three</div>
                                             <div class="font-size-h4 font-weight-bolder">@Model.patients_Covid19_Outcome_Levels_2s.FirstOrDefault().three</div>
                                         </div>
                                         <div class="col px-8 py-4">
-                                            <div class="font-size-sm text-muted font-weight-bold">three</div>
+                                            <div class="font-size-sm text-muted font-weight-bold">missing</div>
                                             <div class="font-size-h4 font-weight-bolder">@Model.patients_Covid19_Outcome_Levels_2s.FirstOrDefault().missing</div>
                                         </div>
                                     </div>
@@ -992,7 +992,7 @@
 
                 chart.data = [
                     {
-                        country: "PRMS",
+                        country: "PPMS",
                         value: @Model.patients_Ms_Type2s.FirstOrDefault().progressive_MS
                     },
                     {
@@ -1320,7 +1320,7 @@
                 categoryAxis.renderer.grid.template.disabled = true;
 
                 var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-                valueAxis.title.text = "Units sold (M)";
+                valueAxis.title.text = "";
                 valueAxis.min = 0;
                 valueAxis.renderer.baseGrid.disabled = true;
                 valueAxis.renderer.grid.template.strokeOpacity = 0.07;
@@ -1447,7 +1447,7 @@
                 categoryAxis.renderer.grid.template.disabled = true;
 
                 var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-                valueAxis.title.text = "Units sold (M)";
+                valueAxis.title.text = "";
                 valueAxis.min = 0;
                 valueAxis.renderer.baseGrid.disabled = true;
                 valueAxis.renderer.grid.template.strokeOpacity = 0.07;

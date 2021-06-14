@@ -33,14 +33,14 @@ namespace Federated.Areas.EndUser.Controllers
 
         public IActionResult Run()
         {
-            string filePathExecute = "wwwroot/Scripts/Bash/RunC.sh";
-            FileInfo fileInfo = new FileInfo(filePathExecute);
-            ProcessStartInfo startInfo = new ProcessStartInfo();
-            startInfo.CreateNoWindow = false;
-            startInfo.UseShellExecute = true;
-            startInfo.FileName = "/bin/bash";
-            startInfo.Arguments = $"\"{fileInfo.FullName}\"";
-            Process process = Process.Start(startInfo);
+            //string filePathExecute = "wwwroot/Scripts/Bash/RunC.sh";
+            //FileInfo fileInfo = new FileInfo(filePathExecute);
+            //ProcessStartInfo startInfo = new ProcessStartInfo();
+            //startInfo.CreateNoWindow = false;
+            //startInfo.UseShellExecute = true;
+            //startInfo.FileName = "/bin/bash";
+            //startInfo.Arguments = $"\"{fileInfo.FullName}\"";
+            //Process process = Process.Start(startInfo);
             string DoneC = @"/app/wwwroot/Scripts/Python/MSDA_Querry3/DoneC.txt";
             var CheckDoneC = (System.IO.File.Exists(DoneC));
             if (CheckDoneC == false)
