@@ -23,14 +23,14 @@ namespace Federated.Areas.EndUser.Controllers
         public IActionResult Index()
         {
 
-            //string filePathExecute = "wwwroot/Scripts/Bash/Clean.sh";
-            //FileInfo fileInfo = new FileInfo(filePathExecute);
-            //ProcessStartInfo startInfo = new ProcessStartInfo();
-            //startInfo.CreateNoWindow = false;
-            //startInfo.UseShellExecute = true;
-            //startInfo.FileName = "/bin/bash";
-            //startInfo.Arguments = $"\"{fileInfo.FullName}\"";
-            //Process process = Process.Start(startInfo);
+            string filePathExecute = "wwwroot/Scripts/Bash/Clean.sh";
+            FileInfo fileInfo = new FileInfo(filePathExecute);
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.CreateNoWindow = false;
+            startInfo.UseShellExecute = true;
+            startInfo.FileName = "/bin/bash";
+            startInfo.Arguments = $"\"{fileInfo.FullName}\"";
+            Process process = Process.Start(startInfo);
             return View();
 
 
@@ -39,14 +39,14 @@ namespace Federated.Areas.EndUser.Controllers
         public IActionResult Home()
         {
 
-            //string filePathExecute = "wwwroot/Scripts/Bash/Clean.sh";
-            //FileInfo fileInfo = new FileInfo(filePathExecute);
-            //ProcessStartInfo startInfo = new ProcessStartInfo();
-            //startInfo.CreateNoWindow = false;
-            //startInfo.UseShellExecute = true;
-            //startInfo.FileName = "/bin/bash";
-            //startInfo.Arguments = $"\"{fileInfo.FullName}\"";
-            //Process process = Process.Start(startInfo);
+            string filePathExecute = "wwwroot/Scripts/Bash/Clean.sh";
+            FileInfo fileInfo = new FileInfo(filePathExecute);
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.CreateNoWindow = false;
+            startInfo.UseShellExecute = true;
+            startInfo.FileName = "/bin/bash";
+            startInfo.Arguments = $"\"{fileInfo.FullName}\"";
+            Process process = Process.Start(startInfo);
             return View();
         }
 

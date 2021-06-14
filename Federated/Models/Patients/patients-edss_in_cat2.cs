@@ -14,8 +14,7 @@ namespace Federated.Models.Patients
         public int one { get; set; }
 
         public int missing { get; set; }
-        [JsonProperty("2")]
-        public int two { get; set; }
+      
 
 
     }
