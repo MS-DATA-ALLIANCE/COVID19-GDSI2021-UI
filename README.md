@@ -14,4 +14,4 @@ This information is crucial for people with MS and clinicians to make evidence-b
 MS Data Alliance and the MS International Federation have teamed up to set up a Global Data Sharing Initiative and are calling for individuals and organisations across the global MS movement to get involved.  Watch our animation.
 
 
-For the Manual and how to reproduce the repository, Please refer to the "Manual Federated Pipeline May 2021.pdf" attached in the root.
+<h3>For information on how to reproduce the repository, please refer to the "Manual Federated Pipeline May 2021.pdf" document attached in the root directory.<h3/>
